@@ -1,0 +1,29 @@
+{
+  "name": "processing-dates-checker",
+  "version": "1.0.1",
+  "description": "Simple app to check the procesing dates of irish work permits",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrennanCB/processing-dates-checker.git"
+  },
+  "author": "Brennan Buitendag",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BrennanCB/processing-dates-checker/issues"
+  },
+  "homepage": "https://github.com/BrennanCB/processing-dates-checker#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "mongodb": "^4.1.2",
+    "mongoose": "^6.0.8"
+  },
+  "engines": {
+    "node": "14.x"
+  }
+}
