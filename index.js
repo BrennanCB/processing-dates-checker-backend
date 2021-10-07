@@ -1,5 +1,5 @@
 const express = require("express");
-const cors = require('cors');
+const cors = require("cors");
 const moment = require("moment");
 
 const mongoose = require("mongoose");
@@ -26,9 +26,7 @@ if (port == null || port == "") {
 const ProcessingDates = mongoose.model("processingDates");
 
 const findFunction = (data1, searchString, endString) => {
-  const startIndex =
-    data1.search(new RegExp(searchString, "g")) + searchString.length;
-
+  const startIndex = data1.indexOf(searchString) + searchString.length;
   let newString = data1.slice(startIndex);
 
   return newString.substring(0, newString.indexOf(endString)).trim();
@@ -51,7 +49,7 @@ const getCurrentDates = (add) => {
         resp.on("end", async () => {
           const searchString = '<tr><td>Trusted Partner</td><td class="left">';
 
-          const lastupdatedDate = findFunction(data, "As of ", ",");
+          const lastupdatedDate = findFunction(data, "<p>As of", ",");
           const processingDate = findFunction(data, searchString, "<");
 
           if (add) {
